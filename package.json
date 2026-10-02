@@ -1,0 +1,53 @@
+{
+  "name": "sessionscope",
+  "version": "0.1.0",
+  "description": "Post-flight audit for AI coding-agent sessions. Reads Claude Code and Codex transcripts locally and shows risky commands, leaked secrets, retry loops and files touched.",
+  "keywords": [
+    "claude-code",
+    "codex",
+    "ai-agents",
+    "audit",
+    "transcripts",
+    "developer-tools",
+    "cli",
+    "security",
+    "observability"
+  ],
+  "license": "MIT",
+  "author": "Nithinfgs",
+  "homepage": "https://github.com/Nithinfgs/sessionscope#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nithinfgs/sessionscope.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nithinfgs/sessionscope/issues"
+  },
+  "type": "module",
+  "bin": {
+    "sessionscope": "dist/src/cli.js"
+  },
+  "files": [
+    "dist/src",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "test": "tsc && node --test dist/test/*.test.js",
+    "prepare": "tsc",
+    "demo": "node dist/src/cli.js examples/sessions/demo-claude.jsonl"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.15",
+    "@types/node": "^26.6.4",
+    "typescript": "^7.0.2"
+  }
+}
