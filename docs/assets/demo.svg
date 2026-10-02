@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="704" height="824" viewBox="0 0 704 824" role="img" aria-label="sessionscope terminal output for a demo session">
+<rect width="704" height="824" rx="10" fill="#0d1117"/>
+<circle cx="22" cy="20" r="6" fill="#ff5f56"/><circle cx="42" cy="20" r="6" fill="#ffbd2e"/><circle cx="62" cy="20" r="6" fill="#27c93f"/>
+<text x="84" y="25" fill="#7d8590" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12">npx sessionscope examples/sessions/demo-claude.jsonl</text>
+<g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,'DejaVu Sans Mono',monospace" font-size="14">
+<text x="24" y="52" xml:space="preserve"><tspan fill="#e6edf3" font-weight="700">sessionscope</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#6e7681">·</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e6edf3" font-weight="700">shop-api</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#6e7681">· claude · feat/rate-limit · 5d1c9a7e</tspan></text>
+<text x="24" y="71" xml:space="preserve"><tspan fill="#6e7681">──────────────────────────────────────────────────────────────────────────────</tspan></text>
+<text x="24" y="90" xml:space="preserve"><tspan fill="#e6edf3" font-weight="700">6m 19s</tspan><tspan fill="#e6edf3"> · 1 prompt · 36 tool calls · 5 failed</tspan></text>
+<text x="24" y="109" xml:space="preserve"><tspan fill="#6e7681">tokens: 6.1k out · 44k fresh in · 1.7M cache reads</tspan></text>
+<text x="24" y="128" xml:space="preserve"><tspan fill="#6e7681">models: claude-sonnet-5-5</tspan></text>
+<text x="24" y="147" xml:space="preserve"></text>
+<text x="24" y="166" xml:space="preserve"><tspan fill="#e6edf3" font-weight="700">Findings</tspan><tspan fill="#e6edf3">  </tspan><tspan fill="#ff7b72">4 high</tspan><tspan fill="#6e7681"> · </tspan><tspan fill="#e3b341">5 medium</tspan><tspan fill="#6e7681"> · </tspan><tspan fill="#79c0ff">2 low</tspan><tspan fill="#6e7681"> · 2 notes</tspan></text>
+<text x="24" y="185" xml:space="preserve"></text>
+<text x="24" y="204" xml:space="preserve"><tspan fill="#e6edf3">  </tspan><tspan fill="#ff7b72">●</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#ff7b72">HIGH</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e6edf3" font-weight="700">AWS access key ID in transcript</tspan><tspan fill="#6e7681"> #5</tspan></text>
+<text x="24" y="223" xml:space="preserve"><tspan fill="#e6edf3">       </tspan><tspan fill="#6e7681">AKIA…[20 chars] · output of Bash</tspan></text>
+<text x="24" y="242" xml:space="preserve"><tspan fill="#e6edf3">  </tspan><tspan fill="#ff7b72">●</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#ff7b72">HIGH</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e6edf3" font-weight="700">Pipes a download into a shell</tspan><tspan fill="#6e7681"> #9</tspan></text>
+<text x="24" y="261" xml:space="preserve"><tspan fill="#e6edf3">       </tspan><tspan fill="#6e7681">curl -fsSL https://get.pgtools.example/install.sh | sh</tspan></text>
+<text x="24" y="280" xml:space="preserve"><tspan fill="#e6edf3">  </tspan><tspan fill="#ff7b72">●</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#ff7b72">HIGH</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e6edf3" font-weight="700">Modifies shell startup file</tspan><tspan fill="#6e7681"> #32</tspan></text>
+<text x="24" y="299" xml:space="preserve"><tspan fill="#e6edf3">       </tspan><tspan fill="#6e7681">/home/dev/.zshrc</tspan></text>
+<text x="24" y="318" xml:space="preserve"><tspan fill="#e6edf3">  </tspan><tspan fill="#ff7b72">●</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#ff7b72">HIGH</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e6edf3" font-weight="700">Force-pushes to a remote</tspan><tspan fill="#6e7681"> #34</tspan></text>
+<text x="24" y="337" xml:space="preserve"><tspan fill="#e6edf3">       </tspan><tspan fill="#6e7681">git push --force origin feat/rate-limit</tspan></text>
+<text x="24" y="356" xml:space="preserve"><tspan fill="#e6edf3">  </tspan><tspan fill="#e3b341">●</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e3b341">MED </tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e6edf3" font-weight="700">Retried a failing call 7×</tspan><tspan fill="#6e7681"> #4</tspan></text>
+<text x="24" y="375" xml:space="preserve"><tspan fill="#e6edf3">       </tspan><tspan fill="#6e7681">npm test (5 failed)</tspan></text>
+<text x="24" y="394" xml:space="preserve"><tspan fill="#e6edf3">  </tspan><tspan fill="#e3b341">●</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e3b341">MED </tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e6edf3" font-weight="700">Reads a credentials file</tspan><tspan fill="#6e7681"> #5</tspan></text>
+<text x="24" y="413" xml:space="preserve"><tspan fill="#e6edf3">       </tspan><tspan fill="#6e7681">cat .env</tspan></text>
+<text x="24" y="432" xml:space="preserve"><tspan fill="#e6edf3">  </tspan><tspan fill="#e3b341">●</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e3b341">MED </tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e6edf3" font-weight="700">Credentials in URL in transcript</tspan><tspan fill="#6e7681"> #5</tspan></text>
+<text x="24" y="451" xml:space="preserve"><tspan fill="#e6edf3">       </tspan><tspan fill="#6e7681">s3…[14 chars] · output of Bash</tspan></text>
+<text x="24" y="470" xml:space="preserve"><tspan fill="#e6edf3">  </tspan><tspan fill="#e3b341">●</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e3b341">MED </tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e6edf3" font-weight="700">Runs a command with sudo</tspan><tspan fill="#6e7681"> #10</tspan></text>
+<text x="24" y="489" xml:space="preserve"><tspan fill="#e6edf3">       </tspan><tspan fill="#6e7681">sudo pgtools start --port 5432</tspan></text>
+<text x="24" y="508" xml:space="preserve"><tspan fill="#e6edf3">  </tspan><tspan fill="#e3b341">●</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e3b341">MED </tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e6edf3" font-weight="700">Skips git hooks</tspan><tspan fill="#6e7681"> #33</tspan></text>
+<text x="24" y="527" xml:space="preserve"><tspan fill="#e6edf3">       </tspan><tspan fill="#6e7681">git add -A &amp;&amp; git commit -m 'feat: rate limit public API' --no-verify</tspan></text>
+<text x="24" y="546" xml:space="preserve"><tspan fill="#e6edf3">  </tspan><tspan fill="#79c0ff">○</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#79c0ff">LOW </tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e6edf3" font-weight="700">Edited one file 8×</tspan><tspan fill="#6e7681"> #15</tspan></text>
+<text x="24" y="565" xml:space="preserve"><tspan fill="#e6edf3">       </tspan><tspan fill="#6e7681">/home/dev/shop-api/src/server.ts</tspan></text>
+<text x="24" y="584" xml:space="preserve"><tspan fill="#e6edf3">  </tspan><tspan fill="#79c0ff">○</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#79c0ff">LOW </tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e6edf3" font-weight="700">Read one file 6×</tspan><tspan fill="#6e7681"> #24</tspan></text>
+<text x="24" y="603" xml:space="preserve"><tspan fill="#e6edf3">       </tspan><tspan fill="#6e7681">/home/dev/shop-api/src/middleware/rateLimit.ts</tspan></text>
+<text x="24" y="622" xml:space="preserve"><tspan fill="#e6edf3">  </tspan><tspan fill="#6e7681">·</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#6e7681">INFO</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e6edf3" font-weight="700">Pushes to a remote</tspan><tspan fill="#6e7681"> #34</tspan></text>
+<text x="24" y="641" xml:space="preserve"><tspan fill="#e6edf3">       </tspan><tspan fill="#6e7681">git push --force origin feat/rate-limit</tspan></text>
+<text x="24" y="660" xml:space="preserve"><tspan fill="#e6edf3">  </tspan><tspan fill="#6e7681">·</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#6e7681">INFO</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#e6edf3" font-weight="700">Changes something on GitHub</tspan><tspan fill="#6e7681"> #35</tspan></text>
+<text x="24" y="679" xml:space="preserve"><tspan fill="#e6edf3">       </tspan><tspan fill="#6e7681">gh pr create --fill</tspan></text>
+<text x="24" y="698" xml:space="preserve"></text>
+<text x="24" y="717" xml:space="preserve"><tspan fill="#e6edf3" font-weight="700">Tool calls</tspan></text>
+<text x="24" y="736" xml:space="preserve"><tspan fill="#e6edf3">  shell   </tspan><tspan fill="#56d4dd">██████████████████</tspan><tspan fill="#e6edf3"> 16</tspan></text>
+<text x="24" y="755" xml:space="preserve"><tspan fill="#e6edf3">  edit    </tspan><tspan fill="#56d4dd">██████████</tspan><tspan fill="#6e7681">░░░░░░░░</tspan><tspan fill="#e6edf3"> 9</tspan></text>
+<text x="24" y="774" xml:space="preserve"><tspan fill="#e6edf3">  read    </tspan><tspan fill="#56d4dd">█████████</tspan><tspan fill="#6e7681">░░░░░░░░░</tspan><tspan fill="#e6edf3"> 8</tspan></text>
+<text x="24" y="793" xml:space="preserve"><tspan fill="#e6edf3">  write   </tspan><tspan fill="#56d4dd">██</tspan><tspan fill="#6e7681">░░░░░░░░░░░░░░░░</tspan><tspan fill="#e6edf3"> 2</tspan></text>
+</g></svg>
