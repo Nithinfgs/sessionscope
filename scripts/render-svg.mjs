@@ -7,6 +7,9 @@ const root = fileURLToPath(new URL("..", import.meta.url));
 const cmd = ["dist/src/cli.js", "examples/sessions/demo-claude.jsonl"];
 const raw = execFileSync(process.execPath, cmd, { cwd: root, env: { ...process.env, FORCE_COLOR: "1", NO_COLOR: "" }, encoding: "utf8" });
 
+const ESC = String.fromCharCode(27);
+const SGR = new RegExp(`(${ESC}\\[\\d+m)`);
+const SGR_ONE = new RegExp(`^${ESC}\\[(\\d+)m$`);
 const palette = { 1: null, 2: "#7d8590", 31: "#ff7b72", 32: "#7ee787", 33: "#e3b341", 34: "#79c0ff", 36: "#56d4dd", 90: "#6e7681" };
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
@@ -20,8 +23,8 @@ const rows = lines.map((line) => {
   let bold = false;
   let cols = 0;
   let out = "";
-  for (const part of line.split(/(\u001b\[\d+m)/)) {
-    const m = /^\u001b\[(\d+)m$/.exec(part);
+  for (const part of line.split(SGR)) {
+    const m = SGR_ONE.exec(part);
     if (m) {
       const code = Number(m[1]);
       if (code === 1) bold = true;
