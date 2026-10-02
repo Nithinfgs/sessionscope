@@ -1,0 +1,7 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.15/schema.json",
+  "files": { "includes": ["**", "!dist", "!node_modules", "!examples/sessions", "!docs/assets"] },
+  "formatter": { "indentStyle": "space", "indentWidth": 2, "lineWidth": 140 },
+  "linter": { "rules": { "recommended": true, "style": { "noNonNullAssertion": "error" } } },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } }
+}
