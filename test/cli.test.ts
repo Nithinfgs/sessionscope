@@ -61,6 +61,11 @@ test("discovers sessions and resolves 'latest' and id prefixes", () => {
   assert.equal(run(["nope-123"], env).status, 2);
 });
 
+test("demo runs the bundled sessions", () => {
+  assert.match(run(["demo"]).stdout, /shop-api/);
+  assert.match(run(["demo", "codex"]).stdout, /blog/);
+});
+
 test("--help and --version work", () => {
   assert.match(run(["--help"]).stdout, /Usage/);
   assert.match(run(["--version"]).stdout, /^\d+\.\d+\.\d+/);

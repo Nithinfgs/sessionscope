@@ -51,8 +51,9 @@ npx github:Nithinfgs/sessionscope 5d1c9a7e
 # Shareable, self-contained HTML report with a timeline
 npx github:Nithinfgs/sessionscope latest --open
 
-# Try it on the bundled synthetic sessions
-npx github:Nithinfgs/sessionscope examples/sessions/demo-claude.jsonl
+# No sessions yet? Try the bundled synthetic ones
+npx github:Nithinfgs/sessionscope demo
+npx github:Nithinfgs/sessionscope demo codex
 ```
 
 Or install from a clone:
@@ -75,6 +76,7 @@ The terminal summary above comes from [`examples/sessions/demo-claude.jsonl`](ex
 ```
 sessionscope [session] [options]     audit a session (default: latest)
 sessionscope list [-n 15]            list sessions found on this machine
+sessionscope demo [codex]            audit a bundled synthetic session
 
   --html            write sessionscope-report.html
   --out <file>      HTML report path (implies --html)

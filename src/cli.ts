@@ -2,6 +2,7 @@
 import { spawn } from "node:child_process";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { basename, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { parseArgs } from "node:util";
 import { analyze } from "./analyzers/index.js";
 import { discoverSessions, parseSession, type SessionFile } from "./parsers/index.js";
@@ -16,6 +17,7 @@ const HELP = `sessionscope: post-flight audit for AI coding-agent sessions
 Usage
   sessionscope [session] [options]     audit a session (default: your latest one)
   sessionscope list [-n 15]            list sessions found on this machine
+  sessionscope demo [codex]            audit a bundled synthetic session (no setup needed)
 
 <session> can be a path to a .jsonl transcript, "latest", or a session id prefix.
 Claude Code (~/.claude/projects) and Codex CLI (~/.codex/sessions) are detected automatically.
@@ -46,7 +48,13 @@ function fail(msg: string): never {
   process.exit(2);
 }
 
-function resolveTarget(target: string | undefined): string {
+function demoFile(which: string | undefined): string {
+  const name = which === "codex" ? "demo-codex.jsonl" : "demo-claude.jsonl";
+  return fileURLToPath(new URL(`../../examples/sessions/${name}`, import.meta.url));
+}
+
+function resolveTarget(target: string | undefined, second?: string): string {
+  if (target === "demo") return demoFile(second);
   if (target && target !== "latest") {
     if (existsSync(target)) return resolve(target);
     const match = discoverSessions().find((s) => basename(s.file).startsWith(target) || basename(s.file).includes(target));
@@ -54,7 +62,7 @@ function resolveTarget(target: string | undefined): string {
     fail(`no transcript found for "${target}". Pass a .jsonl path, a session id prefix, or run "sessionscope list".`);
   }
   const latest = discoverSessions()[0];
-  if (!latest) fail("no Claude Code or Codex sessions found. Pass a transcript path explicitly.");
+  if (!latest) fail("no Claude Code or Codex sessions found on this machine. Pass a transcript path, or try: sessionscope demo");
   return latest.file;
 }
 
@@ -120,7 +128,7 @@ function main(): void {
   const failOn = values["fail-on"] as Severity | undefined;
   if (failOn && !["high", "medium", "low"].includes(failOn)) fail(`--fail-on must be high, medium or low (got "${failOn}")`);
 
-  const file = resolveTarget(positionals[0]);
+  const file = resolveTarget(positionals[0], positionals[1]);
   let report: ReturnType<typeof analyze>;
   try {
     report = analyze(parseSession(file));
